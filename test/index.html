@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title> Rolling Die App by Kamal Sir </title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			text-align: center;
+			font-family: Arial;
+		}
+		h1 {
+			color: darkblue;
+		}
+		input[type="submit"] {
+			padding: 8px 15px;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+		img {
+			width: 180px;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1> Roll Die </h1>
+	<form onsubmit="roll()">
+		<input type="submit" value="Roll"/>
+	</form>
+	<img src="d1.png" id="im1"/>
+
+	<script>
+		function roll() {
+			event.preventDefault();
+			let im1 = document.getElementById("im1");
+			let images = ["d1.png", "d2.png", "d3.png", "d4.png", "d5.png", "d6.png"];
+			let r = parseInt(Math.random() * images.length);
+			im1.src = images[r];
+		}
+	</script>
+</body>
+</html>
